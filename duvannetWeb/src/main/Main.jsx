@@ -6,6 +6,10 @@ export function MainSection({title}){
                 <h1>{title}</h1>
             </div>
             <div className="main-card-section-container">
+                {/* Mas ejemplos de como se utilizan los componente con su variables, en este caso los ProductCard
+                    eh creado la estructura de la ProductCard en un archivo ProductCard.jsx y le eh dado unas variables
+                    en este caso imagen, link, precio y aca le damos los valores llamandolos como si fueran atributos.
+                */}
                 <ProdcutCard 
                 imagen="https://dotcompatterns.files.wordpress.com/2022/04/hi-estudio-mi_vusbrwxk-unsplash.jpg?w=1024"
                 link="Bell Tower"

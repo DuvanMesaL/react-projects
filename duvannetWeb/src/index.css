@@ -20,7 +20,7 @@ body header{
     display: flex;
     background: #f4ebd4;
     width: 100%;
-    height: 500px;
+    height: 600px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -81,22 +81,24 @@ body header{
     opacity: .5;
 }
 
+/* MAIN  SECTION */
 .main-product-section-container{
     width: 100%;
-    height: 500px;
+    height: 600px;
     display: grid;
     place-content: center;
 }
 
 .main-product-sectiot-contenet-title{
-    margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .main-product-sectiot-contenet-title h1{
     font-size: 1.5rem;
     font-family: 'Poppins';
     text-align: left;
+    letter-spacing: .8px;
+    font-weight: 600;
 }
 
 .main-card-section-container{
@@ -140,9 +142,113 @@ body header{
     opacity: .8;
 }
 
+/* FOOTER SECTION */
+.Footer-website-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #f4ebd4;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.container-info{
+    width: 1250px;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.info-content{
+    margin: 20px;
+    padding: 20px;
+    width: 40%;
+}
+
+.info-tilte-content{
+    margin-bottom: 20px;
+}
+
+.info-tilte-content h4{
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: #617b68;
+    letter-spacing: .8px;
+    font-weight: 600;
+}
+
+.info p{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    letter-spacing: .8px;
+}
+
+.social-logos a{
+    margin: 15px 15px 15px 0px;
+}
+
+.social-logos a img{
+    margin: 15px 15px 15px 0px;
+    transition: all ease .2s;
+}
+
+.social-logos a img:hover{
+    transform: translateY(-5px);
+}
+
+.contact-input{
+    display: flex;
+    align-items: center;
+}
+
+.contact-input input{
+    width: 70%;
+    height: 35px;
+    font-size: 15px;
+    margin: 15px 15px 15px 0px;
+    color: #555;
+    padding-left: 15px;
+}
+
+.btn-submit-message{
+    opacity: .8;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f4ebd4;
+    border: none;
+    background-color: #f893c6;
+    width: 20%;
+    height: 35px;
+}
+
+.btn-submit-message:hover{
+    background-color: #fa5dab;
+}
+
+.desing-by-whit{
+    color: #555;
+    font-size: 18px;
+}
+
+.desing-by-whit a{
+    color: #111;
+}
+
+.desing-by-whit a:hover{
+    text-decoration: none;
+}
+
 /* MEDIA QUERY TABLETAS HEADER*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1290px) {
     header{
         width: 100%;
     }
@@ -171,6 +277,7 @@ body header{
     .main-product-section-container{
         width: 100%;
         height: auto;
+        margin-top: 50px;
         padding-bottom: 30px;
     }
 
@@ -189,6 +296,20 @@ body header{
     }
 
     .card-image{
+        width: 90%;
+    }
+
+    .Footer-website-container{
+        height: auto;
+    }
+
+    .container-info{
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+    }
+
+    .info-content{
         width: 90%;
     }
 }
