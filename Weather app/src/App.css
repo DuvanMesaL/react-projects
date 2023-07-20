@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway';
+}
+
+:root{
+  --body-backgorund: #08090d;
+  --Body-backgroud-color: #100E1D;
+  --Body-background-color-light: #1E213A;
+  --button-Changer-color: #585676;
+  --buttons-color: #6E707A;
+  --text-color: #E7E7EB;
+  --Search-location: #3C47E9;
+}
+
+.Body-Container-Wheather-Page{
+  display: flex;
+  flex-direction: column;
+  background: var(--body-backgorund);
+  width: 100%;
+  height: 100vh;
+  place-content: center;
+  align-items: center;
+}
+
+.Container-Wheather-Page{
+  display: flex;
+  position: relative;
+  min-width: auto;
+  height: 95%;
+  background: var(--Body-backgroud-color);
+  border-radius: 30px;
+  box-shadow: 20px 20px 20px #040406,
+  -20px -20px 20px #0c0e14;
+}
+
+.Search-for-Places-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 25px;
+  background-color: var(--Body-background-color-light);
+  width: 400px;
+  height: 100%;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: 0px 0px 50px var(--body-backgorund);
+}
+
+.buttons-container-section{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+  .Button-Search-For-Places{
+    width: 200px;
+    background-color: var(--buttons-color);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    color: var(--text-color);
+    border-radius: 10px;
+    margin-left: 15px;
+    transition: all ease .2s;
+  }
+
+  .Button-Search-For-Places:hover{
+    background: var(--Body-background-color-light);
+    border: 1px solid var(--text-color);
+  }
+
+  .Search-For-Places{
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: var(--buttons-color);    
+    transition: all ease .2s;
+  }
+
+  .Search-For-Places:hover{
+    background-color: var(--Body-background-color-light);
+    border: 1px solid var(--text-color);
+  }
+
+  .Location-Icon{
+    color: var(--text-color);
+  }
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    background-color: var(--Body-background-color-light);
+    width: 400px;
+    height: 100%;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: 0px 0px 50px var(--body-backgorund);
+    position: absolute;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.close-button {
+    margin-right: 20px;
+    margin-bottom: 30px;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.Search-For-Location-Section {
+  position: relative;
+}
+
+.Search-For-Location-Section .search-icon {
+  opacity: .5;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  color: var(--text-color);
+  transform: translateY(-50%);
+}
+
+.Search-For-Location-Section .SearchNameCountry {
+  padding-left: 40px; 
+  margin-left: 20px;
+  height: 40px;
+  width: 250px;
+  margin-right: 15px;
+  background: var(--Body-background-color-light);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.SearchNameCountry::placeholder{
+  opacity: .5;
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+.Button-Search-for-Location{
+  height: 40px;
+  width: 100px;
+  align-items: center;
+  text-align: center;
+  background: var(--Search-location);
+  color: var(--text-color);
+  border: none;
+  font-size: 15px;
+}
+
+.select-Search-Location{
+  width: 100%;
+  height: auto;
+}
+
+.dropdown{
+  position: relative;
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.dropdown::before{
+  opacity: .5;
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 2px solid var(--text-color);
+  right: 50px;
+  top: 13px;
+  z-index: 1000;
+  border-top: 2px solid var(--Body-background-color-light);
+  border-right: 2px solid var(--Body-background-color-light);
+  transform: rotate(-45deg);
+}
+
+.dropdown.active::before{
+  top: 15px;
+  transform: rotate(-135deg);
+}
+
+.dropdown input{
+  width: 366px;
+  height: 40px;
+  background: var(--Body-background-color-light);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.dropdown input::placeholder{
+  color: var(--text-color);
+  opacity: .5;
+  font-size: 15px;
+}
+
+.dropdown.active .option{
+  display: block;
+}
+
+.option{
+  position: absolute;
+  top: 70px;
+  width: 360px;
+  background: transparent;
+  color: var(--text-color);
+  height: auto;
+  overflow: hidden;
+  display: none;
+}
+
+.option div{
+  width: 360px;
+  height: 40px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+
+.option div:hover{
+  background-color: var(--button-Changer-color);
+}
+
+.weather-container-img{
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  height: 400px;
+  background: transparent;
+}
+
+.background-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/Cloud-background.png);
+  background-size: 630px;
+  background-position: 50% 5%;
+  opacity: 0.1;
+}
+
+.today-image{
+  background: transparent;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheather-today-info{
+  width: 100%;
+  height: 350px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.Today-Grade-Info{
+  width: 100%;
+  display: flex;
+  height: auto;
+  align-items: end;
+  justify-content: center;
+}
+
+.Grade-For-Weather-Today{
+  font-size: 7rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.Grade-Simb-For-Grades{
+  opacity: .7;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  font-size: 3rem;
+  color: var(--text-color);
+  align-items: center;
+}
+
+.Weather{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Weather-Info-Today{
+  font-weight: 500;
+  opacity: .6;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.date-Today-info{
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Date{
+  opacity: .7;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-color);
+}
+
+.Date-midle{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.Location-Today-Info{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Location-Today-Info h5{
+  color: var(--text-color);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.Location-Logo-Today-Weather{
+  color: var(--text-color);
+}
+
+.Wheather-Pronostic-Info-Section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 400px);
+  height: 100%;
+  background: transparent;
+  padding: 50px 100px 20px 100px;
+  padding-bottom: none;
+}
+
+.Wheather-Pronostic-Top-info-buttons{
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+  .button-changer-grade{
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 50%;
+    background: var(--button-Changer-color);
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    transition: all ease .5s;
+  }
+
+  .button-changer-grade.active{
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 50%;
+    background: var(--text-color);
+    color: var(--Body-backgroud-color);
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    transition: all ease .5s;
+  }
+
+  .button-changer-grade:hover{
+    transform: translateY(-8px);
+  }
+
+.Wheather-Pronostic-header-info-Card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 90%;
+  margin-top: 20px;
+  height: 200px;
+}
+
+  .Card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    width: 135px;
+    height: 100%;
+    background: var(--Body-background-color-light);
+  }
+
+  .top-info-Card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    margin: 15px;
+  }
+
+  .Date-Card{
+    opacity: .9;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+
+  .Image-card-wheather{
+    width: 70px;
+    height: auto;
+  }
+
+  .Grade-Info-card{
+    width: 98%;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+  }
+
+  .info-grade{
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .Min-temperature-info{
+    opacity: .5;
+  }
+
+.Wheather-pronostic-aditional-info{
+  width: 90%;
+  height: 480px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+  .Tittle-Aditional-info-content{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .Aditional-info-Title{
+    color: var(--text-color);
+    font-size: 1.5rem;
+  }
+
+  .container-Aditional-info{
+    width: 100%;
+    height: calc(100% - 65px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+
+  .Wheather-Todays-Aditional-info-Card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Aditional-info-Card{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 25px;
+    width: 340px;
+    background-color: var(--Body-background-color-light);
+  }
+
+  .Top-title-Card{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Title-Aditional-info{
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+
+  .Data-info-Card{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Data-Aditional-Info{
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .Data-Complement{
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .Content-info-Card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+
+  .wind-status-content{
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color)
+  }
+
+  .wind-status-content h1{
+    margin-right: 20px;
+    font-weight: 400;
+  }
+
+.Wheather-pronostic-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.footer-info{
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.user{
+  color: var(--text-color);
+  transition: all ease .2s;
+}
+
+.user:hover{
+  transform: translateY(-8px);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1450px){
+  
+  .Body-Container-Wheather-Page{
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: none;
+  }
+
+  .Container-Wheather-Page{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border-radius: none;
+  }
+
+  .Search-for-Places-section{
+    width: 100%;
+    border-radius: 0px;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+
+  .Wheather-Pronostic-Info-Section{
+    width: 100%;
+    height: 100vh;
+    border-radius: none;
+    margin: 0;
+  }
+
+  .Card-container{
+    width:180px;
+  }
+
+  .Image-card-wheather{
+    width: 90px;
+  }
+
+  .today-image img{
+    width: 22rem;
+  }
+
+  .background-image{
+    background-size: 1100px;
+    background-position: 90% 80%;
+  }
+
+  .Aditional-info-Card{
+    width: 500px;
+    height: 195px;
+  }
+}
+
+
+@media screen and (max-width: 1350px) {
+
+  .Card-container{
+    width: 150px;
+  }
+
+  .Aditional-info-Card{
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+
+  .Wheather-Pronostic-Info-Section{
+    width: 100%;
+    height: auto;
+  }
+
+  .Wheather-Pronostic-Top-info-buttons{
+    justify-content: center;
+    height: auto;
+  }
+  
+  .button-changer-grade{
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-changer-grade.active{
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .Wheather-Pronostic-header-info-Card{
+    display: grid;
+    height: auto;
+    align-items: center;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Wheather-Pronostic-Info-Section{
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+  }
+  
+  .Card-container{
+    min-width: 200px;
+    height: 300px;
+  }
+
+  .Aditional-info-Card{
+    margin: 15px;
+    width: 500px;
+    height: auto;
+  }
+
+  .Wheather-pronostic-aditional-info{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Wheather-pronostic-aditional-info{
+    width: 100%;
+    margin: 15px;
+    justify-content: center;
+    height: auto;
+  }
+
+  .Tittle-Aditional-info-content{
+    justify-content: center;
+  }
+
+  .container-Aditional-info{
+    margin: 15px;
+    width: auto;
+    height: auto;
+  }
+
+  .Wheather-Todays-Aditional-info-Card-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Location-Today-Info h5{
+    font-size: 1.8rem;
+  }
+
+  .today-image img{
+    width: 20rem;
+  }
+
+  .background-image{
+    background-size: 800px;
+    background-position: 50% -80px;
+  }
+
+  .Wheather-pronostic-bottom{
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: none;
+  }
+}

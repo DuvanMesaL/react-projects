@@ -17,7 +17,7 @@ function App() {
       {/*Llamamos al Header de la pagina*/}
       <Headerwebsite 
         titulo="TITULO DEL SITIO"
-        descripcion="Escruba la descripcion corta del sitio..."
+        descripcion="Escriba la descripcion corta del sitio..."
       />
       {/*Llamamos al main de la pagina*/}
       <MainSection 
